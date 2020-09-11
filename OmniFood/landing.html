@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>Welcome</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="57x57" href="/resources/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/resources/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/resources/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/resources/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/resources/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/resources/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/resources/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/resources/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/resources/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/resources/favicons/manifest.json">
+        <link rel="shortcut icon" href="/resources/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml">
+    </head>
+    <body>
+       <!--orange=#e67e22
+            white=#f4f0f0
+            black=#333--> 
+        <header>
+            <div class="row">
+                <img src="resources/img/logo-white.png" class="logo">
+            </div>
+            <div class="row">
+                <h1>Get Started</h1>
+            </div>
+            <div class="row">
+                <a href="login.html" class="btn btn-full">Login</a>
+                <a href="signup.html" class="btn btn-ghost">Sign up</a>
+            </div>
+        </header>
+        <footer>
+            <div class="row">
+                <p>Copyright &copy; 2020 by OmniFood. All rights reserved.</p>
+            </div>
+        </footer>
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            html{
+                font-family:'Lato',Arial, Helvetica, sans-serif;
+                color:#b4b3b3;
+            }
+            .row{
+                zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+            }
+
+            .row:before,
+            .row:after {
+                content:"";
+                display:table;
+            }
+            .row:after {
+                clear:both;
+            }
+            .logo{
+                height:150px;
+                width:150px;
+                margin-left:680px;
+                margin-top:100px;
+            }
+            header{
+            background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0, 0, 0, 0.7))),url(resources/img/hero.jpg);
+            background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0, 0, 0, 0.7)),url(resources/img/hero.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 85vh;
+            }
+            footer{
+                background-color: #333;
+                padding:3% 0;
+            }
+            footer p{
+                color:#b4b3b3;
+                align-content: center;
+                padding-left:37%;
+            }
+            h1{
+                padding-top:2%;
+                padding-left:600px;
+                font-weight: 300;
+                font-size: 400%;    
+            }
+            .btn:link,
+            .btn:visited,
+            input[type=button]{
+                margin-top:15px;
+                display: inline-block;
+                padding: 10px 30px;
+                font-weight: 300;
+                text-decoration: none;
+                border-radius:200px;
+                -webkit-transition:background-color 0.3s,border 0.3s, color 0.3s;
+                transition:background-color 0.3s,border 0.3s, color 0.3s;
+    
+            }
+            input[type=button]{
+                font-size:80%;
+            }
+
+            .btn-full:link,
+            .btn-full:visited,
+            input[type=button]{
+                margin-left:620px;
+                margin-right:40px;
+                 background-color: #e67e22;
+                border:1px solid #e67e22;
+                color:#fff;
+            }
+
+            .btn-ghost:link,
+            .btn-ghost:visited{
+                border: 1px solid #e67e22;
+                color:#e67e22;
+            }
+
+
+            .btn:hover,
+            .btn:active,
+            input[type=button]:hover{
+                background-color:#b05d14;
+                border:1px solid #b05d14;
+                color:#fff;
+            }
+        </style>
+    </body>
+</html>
