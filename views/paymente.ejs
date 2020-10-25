@@ -126,22 +126,22 @@ margin: 2px;
           <div class="col-50">
             <h3>Shipping Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname">
+            <input type="text" id="fname" name="firstname" required>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" onclick="javascript: ValidateEmail();">
+            <input type="text" id="email" name="email" required>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address">
+            <input type="text" id="adr" name="address" required>
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city">
+            <input type="text" id="city" name="city" required>
 
             <div class="row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input type="text" id="state" name="state">
+                <input type="text" id="state" name="state" required>
               </div>
               <div class="col-50">
                 <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" onclick="javascript:zip();">
+                <input type="text" id="zip" name="zip" required>
               </div>
             </div>
           </div>
@@ -156,11 +156,11 @@ margin: 2px;
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" onclick="javascript:cardnumber();">
+            <input type="text" id="cname" name="cardname" required>
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" onclick="javascript:cvv()" ;="">
+            <input type="text" id="ccnum" name="cardnumber" required >
             <label for="expmonth">Exp Month</label>
-            <select name="expireMM" id="expireMM">
+            <select name="expireMM" id="expireMM" required>
                 <option value="">Month</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -178,17 +178,17 @@ margin: 2px;
             <div class="row">
             <div class="col-50">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" onclick="javascript:expyear()" ;="">
+                <input type="text" id="expyear" name="expyear" required>
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv">
+                <input type="text" id="cvv" name="cvv" required>
               </div>
             </div>
           </div>
 
         </div>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Continue to checkout" class="btn" onsubmit="cvv(),cardnumber(),zip(),ValidateEmail()">
       </form>
     </div>
   </div>
@@ -199,7 +199,7 @@ margin: 2px;
 <script type="text/javascript">
 function cardnumber()
 { var e= document.getElementById("ccnum");
-  var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+  var cardno = /^?:4[0-9]{12}(?:[0-9]{3})?$/;
   if(e.value.match(cardno))
         {
       return true;
@@ -227,24 +227,12 @@ document.form1.text1.focus();
 return false;
 }
 }
-function expyear("expyear")
-{
-if(expyear.selectedIndex<=2020)
-{
-    alert("Please enter a valid expiration year.");
-    return false;
-}
-else
-{
-return true;
-}
-}
 
 function cvv()
 {
 var e= document.getElementById("cvv");
-var cvvalid = /^[0-9]{3,4}$/;
-if((e.value.match(cvvalid))
+var cvvalid =new RegExp('^[0-9]{3,4}$');
+if(e.value.match(cvvalid))
         {
       return true;
         }
@@ -257,8 +245,8 @@ if((e.value.match(cvvalid))
 function zip()
 {
 var e= document.getElementById("zip");
-var zipp= /^[0-9]{5}$/;
-if((e.value.match(zipp))
+var zipp= '/^[0-9]{5}$/';
+if(e.value.match(zipp))
         {
       return true;
         }
