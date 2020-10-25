@@ -1,0 +1,116 @@
+<html>
+    <head><title>Sign Up</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="57x57" href="/resources/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/resources/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/resources/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/resources/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/resources/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/resources/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/resources/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/resources/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/resources/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/resources/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/resources/favicons/manifest.json">
+        <link rel="shortcut icon" href="/resources/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml">
+    </head>
+    <body>
+        <div id="container">
+            <div id="form">
+                <form action="/index" method="">
+                    <h2>SIGN UP</h2>
+                    <div style="display: inline;margin:10px 10px">
+                        <input type="text" style="width:37%" name="user[first_name]" required placeholder="First Name">
+                        <input type="text" style="width:37%" name="user[last_name]" required placeholder="Last Name"><br>
+                    </div>
+                    <input type="text" name="user[username]" required placeholder="Username"><br>
+                    <input type="password" name="user[password]" required placeholder="Password"><br><br>
+                    <input type="checkbox" style="margin-left:0px" required name="" id="">
+                     I accept the 
+                    <span style="color:rgb(33, 112, 214)">
+                    Terms Of Use
+                    </span> and <span style="color:rgb(33, 112, 214)">Privacy Policy</span>.
+                    <input type="submit" value="Join Now" style="color:white;background:#000000;"> 
+                    <p>Already have an account? <span><a href="/login">Login</a></span></p>
+                </form>
+            </div>
+        </div>
+        <style>
+            body {
+            background: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.637)), url(images/login.jpeg);
+            }
+   
+            #container {
+                position: absolute;
+                height: 72%;
+                width: 35%;
+                left: 32.5%;
+                top: 16%;
+                background: rgba(255, 255, 255, 0.8);
+                border: 1px solid transparent;
+                border-radius: 10px;
+                text-align: center;
+            }
+   
+            #form {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+    
+            input[type="text"],
+            input[type="password"] {
+                padding: 7px 10px;
+                font-size: 20px;
+                margin: 10px 10px;
+                width: 80%;
+                outline: 0;
+                border: 0px transparent;
+                border-radius: 10px;
+                font-family: "Lato";
+            }
+   
+            #logo {
+                margin-top: 5px;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+            }
+   
+            p {
+                font-family: "Lato";
+            }
+   
+            input[type="submit"] {
+                margin-top: 25px;
+                padding: 10px;
+                font-size: 20px;
+                margin: 22px 10px 10px 10px;
+                width: 80%;
+                outline: 0;
+                border: 0px transparent;
+                border-radius: 10px;
+                font-family: "Lato";
+            }
+   
+            input[type="submit"]:hover {
+                opacity: 0.8;
+                transition: 0.2s;
+            }
+   
+            h2 {
+                font-family: "Lato";
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                font-size: 200%;
+            }
+        </style>
+    </body>
+</html>
