@@ -3,8 +3,8 @@ const bodyParser=require('body-parser');
 const mongoose = require("mongoose");
 const ejs=require('ejs');
 require("dotenv").config();
-let User = require("./models/user.model");
-const { db } = require('./models/user.model');
+const User = require("./models/user.model"),
+    Feedback = require("./models/feedback.model");
 
 const app=express();
 app.set('view engine','ejs');
@@ -50,6 +50,9 @@ app.get('/starter',(req,res)=>{
     res.render('starter');
 })
 
+app.get('/thankfeed',(req,res)=>{
+  res.render('thankfeed');
+})
 
 app.get('/thankyou',(req,res)=>{
     res.render('thankyou');
@@ -88,6 +91,20 @@ app.post("/login", function (req, res) {
       }
     });
   });
+
+  app.post('/thankfeed',(req,res)=>{
+    Feedback.create(req.body.user, function (err, user) {
+      console.log(user);
+      try {
+        console.log(user);
+        logU = true;
+        name = user.name;
+        res.redirect("/thankfeed");
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  })
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");

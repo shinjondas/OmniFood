@@ -374,13 +374,13 @@
             </div>
             <div class="row">
                 <div ng-app="feedback" ng-controller="formCtrl">
-                <form method="post" action="#" class="contact-form">
+                <form method="post" action="/thankfeed" class="contact-form">
                     <div class="row">
                         <div class="col span-1-of-3">
                             <label for="name">Name<span>*</span></label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="text" name="name"  id="name" ng-model="name" required>
+                            <input type="text" name="user[name]"  id="name" ng-model="name" required>
                          </div>
                     </div>
                     
@@ -389,7 +389,7 @@
                             <label for="email">Email<span>*</span></label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="email" name="email" id="email" ng-model="emailid" required>
+                            <input type="email" name="user[email]" id="email" ng-model="emailid" required>
                          </div>
                     </div>
                     
@@ -421,7 +421,7 @@
                             <label for="message">Drop us a line</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <textarea name="message" placeholder="Your message">Your message</textarea>
+                            <textarea name="user[message]" placeholder="Your message">Your message</textarea>
                          </div>
                     </div>
                     
@@ -430,7 +430,7 @@
                             <label>&nbsp;</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="button" value="Send it!">
+                            <input type="submit" value="Send it!">
                          </div>
                     </div>
                 </form>
