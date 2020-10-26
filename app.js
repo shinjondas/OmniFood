@@ -57,35 +57,37 @@ app.get('/paymente',(req,res)=>{
 app.get('/thankyou',(req,res)=>{
     res.render('thankyou');
 })
-app.post("/signup",(req,res)=>{
-    var first_name=req.body.firstname;
-    var last_name=req.body.lastname;
-    var username=req.body.username;
-    var password=req.body.password;
-    var data = { 
-        "first_name": first_name, 
-        "last_name":last_name, 
-        "username":username, 
-        "password":password 
-    } 
-    console.log(data);
-    db.collection('details').insertOne(data,function(err, collection){ 
-        if (err) throw err; 
-        console.log("Record inserted Successfully"); 
-        console.log(data);
-              
-    }); 
-}) 
-
 app.post("/login", function (req, res) {
     User.create(req.body.user, function (err, user) {
-      console.log(user.first_name);
+      console.log(user);
       try {
         console.log(user);
         logU = true;
         name = user.first_name;
+        res.redirect("/index");
       } catch (err) {
         console.log(err);
+      }
+    });
+  });
+  app.post("/index", function (req, res) {
+    User.findOne({ username: req.body.username }, function (err, user) {
+      // console.log(err);
+      // console.log(user);
+      try {
+        if (user.password == req.body.password) {
+          logU = true;
+          message = "";
+          res.redirect("/index");
+        } else {
+          res.redirect("/login");
+          message = "Invalid Password";
+          console.log(message);
+        }
+      } catch (err) {
+        res.redirect("/login");
+        message = "Invalid Username";
+        console.log(message);
       }
     });
   });
