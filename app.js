@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const ejs=require('ejs');
 require("dotenv").config();
 const User = require("./models/user.model"),
+      Order=require("./models/order.model"),
     Feedback = require("./models/feedback.model");
 
 const app=express();
@@ -91,10 +92,22 @@ app.post("/login", function (req, res) {
       }
     });
   });
-
+  app.post('/thankyou',(req,res)=>{
+    Order.create(req.body.user, function (err, user) {
+      console.log(user);
+      try {
+        console.log(user);
+        logU = true;
+        name = user.name;
+        res.redirect("/thankyou");
+      } catch (err) {
+        console.log(err);
+      }
+    });
+  })
   app.post('/thankfeed',(req,res)=>{
     Feedback.create(req.body.user, function (err, user) {
-      console.log(user);
+      console.log(user.item_name);
       try {
         console.log(user);
         logU = true;

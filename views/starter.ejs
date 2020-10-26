@@ -32,34 +32,35 @@
         <marquee style="color:whitesmoke">!!!Place your order!!!</marquee>
         <div class="wrap" style="margin-top:-2%">
             <center><table style="align-items: center;" >
-                <tr>
-                    <th colspan=2><center><b>Item Name</center></b></th>                 
-                </tr>              
-                    <td><center>Pumpkin Soup and Souffle</center></td>
-                </tr>
-                <tr>
-                    <td><center>Indian Dal and Roti</center></td>
-                </tr>
-                <tr>
-                    <td><center>Corn and Cheese Burger</center></td>    
-                </tr>
-                <tr>
-                    <td><center>Chicken Biriyani</center></td>
-                </tr>
-                <tr>                    
-                    <td><center>Veg pulao</center></td>                    
-                </tr>
-                <tr>
-                    <td><center>Chicken Steak with Veg Sides</center></td>
-                </tr>             
-            </table></center>
+              <tr>
+                  <th colspan=2><center><b>Item Name</center></b></th>                 
+              </tr>              
+                  <td><center>Pumpkin Soup and Souffle</center></td>
+              </tr>
+              <tr>
+                  <td><center>Indian Dal and Roti</center></td>
+              </tr>
+              <tr>
+                  <td><center>Corn and Cheese Burger</center></td>    
+              </tr>
+              <tr>
+                  <td><center>Chicken Biriyani</center></td>
+              </tr>
+              <tr>                    
+                  <td><center>Veg pulao</center></td>                    
+              </tr>
+              <tr>
+                  <td><center>Chicken Steak with Veg Sides</center></td>
+              </tr>             
+          </table></center>
             <div class="col-75">
                 <form method="post" action="/thankyou">
                 Food item for order:
-                <input  type="text" name="order[item]" id="order[item]" size="60" maxlength="60" >
+                <input  type="text" name="user[order_name]" size="60" maxlength="60" >
                 <br><br>
-                Price:
-                <input type="text" name="order[price]" size="10" value="150" id="order[price]" disabled>
+                Price:<br>
+                250 INR<br>
+                <input type="text" name="user[cost]" size="10" value="250" >
                 <br><br>
                 <button id="b1" type="button">Proceed</button>
             </div>
@@ -73,22 +74,22 @@
                           
                                         <h3>Shipping Address</h3>
                                         <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                        <input type="text" id="order[fname]" name="order[firstname]">
+                                        <input type="text" name="user[name]">
                                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                        <input type="text" id="order[email]" name="order[email]" onclick="javascript: ValidateEmail();">
+                                        <input type="text" name="user[email_id]">
                                         <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                        <input type="text" id="order[adr]" name="order[address]">
+                                        <input type="text" name="user[address]">
                                         <label for="city"><i class="fa fa-institution"></i> City</label>
-                                        <input type="text" id="order[city]" name="order[city]">
+                                        <input type="text" name="user[city]">
 
                                           <div class="row">
                                               <div class="col-50">
                                                   <label for="state">State</label>
-                                                  <input type="text" id="order[state]" name="order[state]">
+                                                  <input type="text" name="user[state]">
                                               </div>
                                               <div class="col-50">
                                                   <label for="zip">Zip</label>
-                                                  <input type="text" id="order[zip]" name="order[zip]" onclick="javascript:zip();">
+                                                  <input type="text" name="user[zip]">
                                               </div>
                                           </div>
                                       </div>
@@ -102,11 +103,11 @@
                                           <i class="fa fa-cc-discover" style="color:orange;"></i>
                                           </div>
                                       <label for="cname">Name on Card</label>
-                                          <input type="text" id="order[cname]" name="order[cardname]" onclick="javascript:cardnumber();">
+                                          <input type="text" name="user[cardname]">
                                           <label for="ccnum">Credit card number</label>
-                                          <input type="text" id="order[ccnum]" name="order[cardnumber]" onclick="javascript:cvv()" ;="">
+                                          <input type="text" name="user[ccn]" ;="">
                                         <label for="expmonth">Exp Month</label>
-                                        <select name="expireMM" id="expireMM">
+                                        <select name="expmonth">
                                           <option value="">Month</option>
                                           <option value="01">01</option>
                                           <option value="02">02</option>
@@ -124,11 +125,11 @@
                                           <div class="row">
                                             <div class="col-50">
                                             <label for="expyear">Exp Year</label>
-                                            <input type="text" id="order[expyear]" name="order[expyear]" onclick="javascript:expyear()" ;="">
+                                            <input type="text" name="user[expyear]" ;="">
                                             </div>
                                             <div class="col-50">
                                                 <label for="cvv">CVV</label>
-                                                  <input type="text" id="order[cvv]" name="order[cvv]">
+                                                  <input type="text" name="user[cvv]">
                                               </div>
                                           </div>
                                       </div>
@@ -152,17 +153,14 @@
             background-color:rgba(168, 167, 167, 0.555);
             margin-top:10%;
         }
-
 body {
   font-family: Arial;
   font-size: 17px;
   padding: 8px;
 }
-
 * {
   box-sizing: border-box;
 }
-
 .row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
@@ -170,35 +168,29 @@ body {
   flex-wrap: wrap;
   margin: 0 -16px;
 }
-
 .col-25 {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
 }
-
 .col-50 {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
 }
-
 .col-75 {
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
 }
-
 .col-25,
 .col-50,
 .col-75 {
   padding: 0 16px;
 }
-
 .container {
   background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
-
 input[type=text] {
   width: 100%;
   margin-bottom: 20px;
@@ -206,18 +198,15 @@ input[type=text] {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-
 label {
   margin-bottom: 10px;
   display: block;
 }
-
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
 }
-
 .btn {
   background-color: #e67e22;
   color: white;
@@ -229,24 +218,19 @@ label {
   cursor: pointer;
   font-size: 17px;
 }
-
 .btn:hover {
   background-color: #d16004;
 }
-
 a {
   color: #2196F3;
 }
-
 hr {
   border: 1px solid lightgrey;
 }
-
 span.price {
   float: right;
   color: grey;
 }
-
 @media (max-width: 800px) {
   .row {
     flex-direction: column-reverse;
