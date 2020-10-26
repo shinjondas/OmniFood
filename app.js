@@ -20,7 +20,7 @@ var message = "";
 var logU = false;
 var logA = false;
 
-
+const visited=[];
 
 app.get('/',(req,res)=>{
     res.render('landing');
@@ -50,9 +50,6 @@ app.get('/starter',(req,res)=>{
     res.render('starter');
 })
 
-app.get('/paymente',(req,res)=>{
-    res.render('paymente');
-})
 
 app.get('/thankyou',(req,res)=>{
     res.render('thankyou');

@@ -1,77 +1,267 @@
-﻿<html>
+<html>
     <head>
-        <title>Pro</title>
+    <title>
+        food selection
+    </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("#hide").hide();
+            $("#b1").click(function(){
+               $("#hide").toggle();
+            });
+         }); 
+        
+        </script>
+        <style>
+          *{
+            font-family: Lato;
+          }
+        </style>
     </head>
     <body>
-        <marquee style="color:red">!!Delivery 10days/month!!</marquee>
-        <div class="wrap">
-        <center><table style="align-items: center;" >
-            <tr>
-                <th>S. No</th>
-                <th><center>Item Name</center></th>
-                <th> </th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><center>Toasted Muffin</center></td>
-                <td><a href="/paymente">Buy Now</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><center>Cinnamon Rolls</center></td>
-                <td><a href="/paymente">Buy Now</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><center>Poha</center></td>
-                <td><a href="/paymente">Buy Now</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><center>Oatmeal Porridge</center></td>
-                <td><a href="/paymente">Buy Now</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td><center>Crispy Fried Chicken</center></td>
-                <td><a href="/paymente">Buy Now</a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td><center>Caesar Salad</center></td>
-                <td><a href="/paymente">Buy Now</a></td>
-            </tr>
-        </table></center></div>
-    </body>
+      <script>  
+        
+        
+                                                                                                                               
+    </script>
+        <marquee style="color:whitesmoke">!!!Place your order!!!</marquee>
+        <div class="wrap" style="margin-top:-2%">
+            <center><table style="align-items: center;" >
+                <tr>
+                    <th colspan=2><center><b>Item Name</center></b></th>                 
+                </tr>              
+                    <td><center>Toasted Muffin</center></td>
+                </tr>
+                <tr>
+                    <td><center>Cinnamon Rolls</center></td>
+                </tr>
+                <tr>
+                    <td><center>Poha</center></td>    
+                </tr>
+                <tr>
+                    <td><center>Oatmeal Porridge</center></td>
+                </tr>
+                <tr>                    
+                    <td><center>Crispy Fried Chicken</center></td>                    
+                </tr>
+                <tr>
+                    <td><center>Caesar Salad</center></td>
+                </tr>             
+            </table></center>
+            <div class="col-75">
+                <form method="post" action="/thankyou">
+                Food item for order:
+                <input  type="text" name="item" id="user[item]" size="60" maxlength="60" >
+                <br><br>
+                Price:
+                <input type="text" name="price" size="10" value="200" id="user[price]" disabled>
+                <br><br>
+                <button id="b1" type="button">Proceed</button>
+            </div>
+            <br><br><br><br>
+            <div id="hide" class="hide">   
+                      <div class="row">
+                        <div class="col-75">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-50">
+                          
+                                        <h3>Shipping Address</h3>
+                                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                        <input type="text" id="user[fname]" name="user[firstname]">
+                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                        <input type="text" id="user[email]" name="user[email]" onclick="javascript: ValidateEmail();">
+                                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                        <input type="text" id="user[adr]" name="user[address]">
+                                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                                        <input type="text" id="user[city]" name="user[city]">
+
+                                          <div class="row">
+                                              <div class="col-50">
+                                                  <label for="state">State</label>
+                                                  <input type="text" id="user[state]" name="user[state]">
+                                              </div>
+                                              <div class="col-50">
+                                                  <label for="zip">Zip</label>
+                                                  <input type="text" id="user[zip]" name="user[zip]" onclick="javascript:zip();">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-50">
+                                          <h3>Payment</h3>
+                                          <label for="fname">Accepted Cards</label>
+                                          <div class="icon-container">
+                                          <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                          <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                          <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                          </div>
+                                      <label for="cname">Name on Card</label>
+                                          <input type="text" id="user[cname]" name="user[cardname]" onclick="javascript:cardnumber();">
+                                          <label for="ccnum">Credit card number</label>
+                                          <input type="text" id="user[ccnum]" name="user[cardnumber]" onclick="javascript:cvv()" ;="">
+                                        <label for="expmonth">Exp Month</label>
+                                        <select name="expireMM" id="expireMM">
+                                          <option value="">Month</option>
+                                          <option value="01">01</option>
+                                          <option value="02">02</option>
+                                          <option value="03">03</option>
+                                          <option value="04">04</option>
+                                          <option value="05">05</option>
+                                          <option value="06">06</option>
+                                          <option value="07">07</option>
+                                          <option value="08">08</option>
+                                          <option value="09">09</option>
+                                          <option value="10">10</option>
+                                          <option value="11">11</option>
+                                          <option value="12">12</option>
+                                        </select> 
+                                          <div class="row">
+                                            <div class="col-50">
+                                            <label for="expyear">Exp Year</label>
+                                            <input type="text" id="user[expyear]" name="user[expyear]" onclick="javascript:expyear()" ;="">
+                                            </div>
+                                            <div class="col-50">
+                                                <label for="cvv">CVV</label>
+                                                  <input type="text" id="user[cvv]" name="user[cvv]">
+                                              </div>
+                                          </div>
+                                      </div>
+                                </div>
+                                  <input type="submit" value="Continue to checkout" class="btn">                        
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+
+    </form>
+       
     <style>
-        html{
-            background-image: linear-gradient(rgb(0, 0, 0),rgba(0, 0, 0, 0.562)),url(resources/css/img/back-customers.jpg);
-            font-family: "Lato";
+            body  {
+                 background-image: linear-gradient(rgb(0, 0, 0),rgba(0, 0, 0, 0.562)),url(back-customers.jpg);
+                 font-family: "Lato";
         }
         .wrap{
             border:1px solid rgba(168, 167, 167, 0.555);
-            background-color: rgba(168, 167, 167, 0.555);
+            background-color:rgba(168, 167, 167, 0.555);
             margin-top:10%;
         }
-        table td,th{
-            font-size: 200%;;
-        }
-        a:link,
-        a:visited{
-            text-decoration: none;
-            padding:2px;
-            font-size:small;
-            color:white;
-            border:2px solid #e67e22;
-            background-color:#e67e22;
-            border-radius:100px;
-            margin-bottom:100px;
-        }
-        a:hover,
-        a:active{
-            border:2px solid #663810;
-            background-color:#663810 ;
-        }
-    </style>
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #e67e22;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 50%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #d16004;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+select{
+width: 150px;
+height: 40px;
+margin: 2px;
+}
+</style>
+
+     
+</body>       
 </html>
