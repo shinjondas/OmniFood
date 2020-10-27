@@ -24,46 +24,41 @@
         </style>
     </head>
     <body>
-      <script>  
-        
-        
-                                                                                                                               
-    </script>
-        <marquee style="color:whitesmoke">!!!Place your order!!!</marquee>
-        <div class="wrap" style="margin-top:-2%">
-            <center><table style="align-items: center;" >
-              <tr>
-                  <th colspan=2><center><b>Item Name</center></b></th>                 
-              </tr>              
-                  <td><center>Pumpkin Soup and Souffle</center></td>
-              </tr>
-              <tr>
-                  <td><center>Indian Dal and Roti</center></td>
-              </tr>
-              <tr>
-                  <td><center>Corn and Cheese Burger</center></td>    
-              </tr>
-              <tr>
-                  <td><center>Chicken Biriyani</center></td>
-              </tr>
-              <tr>                    
-                  <td><center>Veg pulao</center></td>                    
-              </tr>
-              <tr>
-                  <td><center>Chicken Steak with Veg Sides</center></td>
-              </tr>             
-          </table></center>
-            <div class="col-75">
-                <form method="post" action="/thankyou">
-                Food item for order:
-                <input  type="text" name="user[order_name]" size="60" maxlength="60" >
+      <br>
+
+            <div class="transbox">
+            <center><table style="align-items: center;font-size: 25px;"> 
+                <tr>
+                    <th colspan=2><center><b>Item Name</center></b></th>                 
+                </tr>              
+                    <td><center>Pumpkin Soup and Souffle</center></td>
+                </tr>
+                <tr>
+                    <td><center>Indian Dal and Roti</center></td>
+                </tr>
+                <tr>
+                    <td><center>Corn and Cheese Burger</center></td>    
+                </tr>
+                <tr>
+                    <td><center>Chicken Biriyani</center></td>
+                </tr>
+                <tr>                    
+                    <td><center>Veg pulao</center></td>                    
+                </tr>
+                <tr>
+                    <td><center>Chicken Steak with Veg Sides</center></td>
+                </tr>             
+            </table></center>
+              <div class="col-75">
+                  <form method="post" action="/thankyou">
+                  Food item for order:<br>
+                  <input  type="text" name="user[order_name]" size="60" maxlength="60" >
+                  <br><br>
+                  Price:<br>
+                  Total: 19 INR<br>
+                <input type="text" name="user[cost]" size="4" value="250"style="text-align: center;font-size: 25px;" >
                 <br><br>
-                Price:<br>
-                Total: 19 INR<br>
-                Enter amount again to confirm:<br>
-                <input type="text" name="user[cost]" size="10" value="250" >
-                <br><br>
-                <button id="b1" type="button">Proceed</button>
+                <button id="b1" type="button" class="btn" >Proceed</button> 
             </div>
             <br><br><br><br>
             <div id="hide" class="hide">   
@@ -108,7 +103,7 @@
                                           <label for="ccnum">Credit card number</label>
                                           <input type="text" name="user[ccn]" ;="">
                                         <label for="expmonth">Exp Month</label>
-                                        <select name="expmonth">
+                                        <select name="expmonth" style="font-size: 20px;">
                                           <option value="">Month</option>
                                           <option value="01">01</option>
                                           <option value="02">02</option>
@@ -135,7 +130,7 @@
                                           </div>
                                       </div>
                                 </div>
-                                  <input type="submit" value="Continue to checkout" class="btn">                        
+                                  <input type="submit" value="Continue to checkout" class="btn" size=10>                        
                               </div>
                         </div>
                     </div>
@@ -145,22 +140,23 @@
     </form>
        
     <style>
-            body  {
-                 background-image: linear-gradient(rgb(0, 0, 0),rgba(0, 0, 0, 0.562)),url(back-customers.jpg);
-                 font-family: "Lato";
-        }
-        .wrap{
-            border:1px solid rgba(168, 167, 167, 0.555);
-            background-color:rgba(168, 167, 167, 0.555);
-            margin-top:10%;
-        }
-body {
-  font-family: Arial;
-  font-size: 17px;
+        body  {
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0, 0, 0, 0.7)),url(resources/img/7.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Lato;
+  font-size: 25px;
   padding: 8px;
 }
-* {
-  box-sizing: border-box;
+div.transbox ,.hide{
+  margin-left: 9%;
+  background-color: #f2f2f2ad;
+  border: 1px solid #f2f2f2ad;
+  opacity: 0.7;
+  width: 80%;
+  padding: 0.3px;
+text-align: center;
 }
 .row {
   display: -ms-flexbox; /* IE10 */
@@ -193,7 +189,7 @@ body {
   border-radius: 3px;
 }
 input[type=text] {
-  width: 100%;
+  width: 60%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
@@ -211,13 +207,15 @@ label {
 .btn {
   background-color: #e67e22;
   color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 50%;
-  border-radius: 3px;
+  padding:6px;
+  border: 2px solid #e67e22;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
   cursor: pointer;
-  font-size: 17px;
 }
 .btn:hover {
   background-color: #d16004;
@@ -246,7 +244,5 @@ height: 40px;
 margin: 2px;
 }
 </style>
-
-     
 </body>       
 </html>

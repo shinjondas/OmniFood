@@ -98,7 +98,7 @@ app.post("/login", function (req, res) {
       try {
         console.log(user);
         logU = true;
-        name = user.name;
+        name = user;
         res.redirect("/thankyou");
       } catch (err) {
         console.log(err);
@@ -107,7 +107,7 @@ app.post("/login", function (req, res) {
   })
   app.post('/thankfeed',(req,res)=>{
     Feedback.create(req.body.user, function (err, user) {
-      console.log(user.item_name);
+      console.log(user);
       try {
         console.log(user);
         logU = true;
