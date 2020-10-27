@@ -9,7 +9,7 @@ var orderSchema = new mongoose.Schema({
     state: String,
     Zip: Number,
     nameoncard: String,
-    ccn: Number,
+    ccn: String,
     expmonth: Number,
     expyear: Number,
     cvv: Number,
