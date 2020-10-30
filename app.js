@@ -5,11 +5,13 @@ const ejs=require('ejs');
 require("dotenv").config();
 const User = require("./models/user.model"),
       Order=require("./models/order.model"),
-    Feedback = require("./models/feedback.model");
+    Feedback = require("./models/feedback.model"),
+    Admin=require("./models/admin.model");
 
 const app=express();
 app.set('view engine','ejs');
-
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -39,6 +41,12 @@ app.get('/index',(req,res)=>{
     res.render('index');
 })
 
+app.get('/restaurantlogin',(req,res)=>{
+  res.render('restaurantlogin');
+  });
+
+
+
 app.get('/premium',(req,res)=>{
     res.render('premium');
 })
@@ -51,16 +59,80 @@ app.get('/starter',(req,res)=>{
     res.render('starter');
 })
 
+app.get('/restaurant',(req,res)=>{
+  Order.find({},function(err,food){
+    try{
+      res.render('restaurant',{food:food});
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  });
+});
+app.get('/admin',(req,res)=>{
+  var food;
+  Feedback.find({},function(err,feedback){
+    try{
+      Order.find({}, function (err, food) {
+        try{
+      User.find({}, function (err, user) {
+        try {
+          res.render('admin',{user:user,food:food,feedback:feedback});
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    }
+    catch(err){
+      console.log(err);
+    }
+    });
+    }
+    catch(err){
+      console.log(err);
+    }
+  });
+  
+});
 app.get('/thankfeed',(req,res)=>{
   res.render('thankfeed');
 })
 
 app.get('/thankyou',(req,res)=>{
     res.render('thankyou');
+    //res.clearCookie('userData');
 })
+app.get('/logout', (req, res)=>{ 
+  res.clearCookie('userData'); 
+  res.send('user logout successfully'); 
+  });
+app.get('/adminlogin',(req,res)=>{
+  res.render('adminlogin');
+});
+  app.post("/admin",(req,res)=>{
+    Admin.findOne({username:req.body.username},(err,user)=>{
+      console.log(user);
+      try{
+        //console.log(user);
+        if(user.password==req.body.password){
+          res.redirect("/admin");
+        }
+        else{
+          res.redirect("/adminlogin");
+          message="Invalid Password";
+          console.log(message);
+        }
+      }
+      catch(err){
+        console.log(err);
+      }
+    });
+  });
 app.post("/login", function (req, res) {
     User.create(req.body.user, function (err, user) {
       console.log(user);
+      res.cookie("userData", user); 
       try {
         console.log(user);
         logU = true;
