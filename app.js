@@ -6,7 +6,8 @@ require("dotenv").config();
 const User = require("./models/user.model"),
       Order=require("./models/order.model"),
     Feedback = require("./models/feedback.model"),
-    Admin=require("./models/admin.model");
+    Admin=require("./models/admin.model"),
+    Restaurant=require("./models/restaurant.model");
 
 const app=express();
 app.set('view engine','ejs');
@@ -41,11 +42,6 @@ app.get('/index',(req,res)=>{
     res.render('index');
 })
 
-app.get('/restaurantlogin',(req,res)=>{
-  res.render('restaurantlogin');
-  });
-
-
 
 app.get('/premium',(req,res)=>{
     res.render('premium');
@@ -59,6 +55,9 @@ app.get('/starter',(req,res)=>{
     res.render('starter');
 })
 
+app.get('/restaurantlogin',(req,res)=>{
+  res.render('restaurantlogin');
+})
 app.get('/restaurant',(req,res)=>{
   Order.find({},function(err,food){
     try{
@@ -70,6 +69,26 @@ app.get('/restaurant',(req,res)=>{
     }
   });
 });
+app.post('/restaurant',(req,res)=>{
+  Restaurant.findOne({username:req.body.username},(err,user)=>{
+    console.log(user);
+    try{
+      //console.log(user);
+      if(user.password==req.body.password){
+        res.redirect("/restaurant");
+      }
+      else{
+        res.redirect("/restaurantlogin");
+        message="Invalid Password";
+        console.log(message);
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
+  });
+})
+
 app.get('/admin',(req,res)=>{
   var food;
   Feedback.find({},function(err,feedback){
