@@ -26,4 +26,4 @@ This is a dummy Food Ordering System named *OmniFood*.<br>
 3. Next you are lead to the primary page of the application, where you can order according to the proposed plan.
 ![Choose Meal](https://github.com/shinjondas/WebTech_Project/blob/master/ChooseMeal.PNG)<br>
 4. Almost there, now you go on and choose whichever meal suits you and order accordingly.
-![Place Order](https://github.com/shinjondas/WebTech_Project/blob/master/Place_Order.PNG)<br>
+![Place Order](https://github.com/shinjondas/WebTech_Project/blob/master/PlaceOrder.PNG)<br>
