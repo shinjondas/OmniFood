@@ -22,4 +22,4 @@ This is a dummy Food Ordering System named *OmniFood*.<br>
 1. This is the Landing Page- from here existing users login, new users may signup. For this workflow, I am going to assume the role of a new user.
 ![Landing Page](https://github.com/shinjondas/WebTech_Project/blob/master/Landing.PNG)<br>
 2. Fill out necessary details such as Firstname, Lastname, intended ID, and password.
-![Sign Up](https://github.com/shinjondas/WebTech_Project/blob/master/Signup.PNG)<br>
+![Sign Up](https://github.com/shinjondas/WebTech_Project/blob/master/SignUp.PNG)<br>
