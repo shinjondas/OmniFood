@@ -19,4 +19,4 @@ This is a dummy Food Ordering System named *OmniFood*.<br>
 3. Execute **node app.js**<br><br>
 ***You're good to go***
 ### Workflow:
-![Landing Page](https://github.com/[shinjondas]/[WebTech_Project]/Landing.png?raw=true)
+![Landing Page](https://github.com/shinjondas/WebTech_Project/blob/master/Landing.PNG)
