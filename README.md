@@ -23,3 +23,5 @@ This is a dummy Food Ordering System named *OmniFood*.<br>
 ![Landing Page](https://github.com/shinjondas/WebTech_Project/blob/master/Landing.PNG)<br>
 2. Fill out necessary details such as Firstname, Lastname, intended ID, and password.
 ![Sign Up](https://github.com/shinjondas/WebTech_Project/blob/master/SignUp.PNG)<br>
+3. Next you are lead to the primary page of the application, where you can order according to the proposed plan.
+![Choose Meal](https://github.com/shinjondas/WebTech_Project/blob/master/ChooseMeal.PNG)<br>
