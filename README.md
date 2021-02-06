@@ -27,4 +27,6 @@ This is a dummy Food Ordering System named *OmniFood*.<br>
 ![Choose Meal](https://github.com/shinjondas/WebTech_Project/blob/master/ChooseMeal.PNG)<br>
 4. Almost there, now you go on and choose whichever meal suits you and order accordingly. Once done, the restaurant service can see you've placed an order.
 ![Place Order](https://github.com/shinjondas/WebTech_Project/blob/master/RestaurantOrderView.PNG)<br>
+**There is an admin privilege provided too-who shall track all transactions, users and feedbacks**
+![Admin View](https://github.com/shinjondas/WebTech_Project/blob/master/AdminView.PNG)<br>
 
